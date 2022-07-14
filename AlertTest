@@ -1,0 +1,17 @@
+QDJ8Q~mLqfDG1FncVX6AkqwVOtZuonpAzLmGdbmT
+
+
+**
+ *  Authenticate with client secret.
+ */
+ClientSecretCredential clientSecretCredential = new ClientSecretCredentialBuilder()
+  .clientId("0346f3e9-65f8-47e2-b28d-63839e85a1c2")
+  .clientSecret("QDJ8Q~mLqfDG1FncVX6AkqwVOtZuonpAzLmGdbmT")
+  .tenantId("7245e48c-a9ff-4b28-98ef-05cfa8edb518")
+  .build();
+
+// Azure SDK client builders accept the credential as a parameter.
+SecretClient client = new SecretClientBuilder()
+  .vaultUrl("https://blah.vault.azure.net")
+  .credential(clientSecretCredential)
+  .buildClient();
